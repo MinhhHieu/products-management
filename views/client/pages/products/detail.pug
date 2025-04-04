@@ -1,0 +1,28 @@
+extends ../../layouts/default.pug
+
+block main 
+  .container.my-3 
+    .row
+      .col-12 
+        .d-flex
+          .product-image
+            if (product.thumbnail)
+              img(src=product.thumbnail, alt=product.title, style="width: 350px; height: auto;")
+
+          .product-info.ml-4
+            if (product.title)
+              h1.mb-4 #{product.title}
+
+            if (product.price)
+              h4.mb-4 Giá: #{product.price}$
+
+            if (product.discountPercentage)
+              h4.mb-4 Giảm giá: #{product.discountPercentage}%
+
+            if (product.stock)
+              h4.mb-4 Còn lại: #{product.stock}
+
+            if (product.description)
+              div.mb-4
+                h4 Mô tả:
+                p #{product.description}

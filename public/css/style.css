@@ -1,0 +1,154 @@
+/* HEADER */
+.header {
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.inner-logo {
+  max-width: 70px;
+}
+
+.inner-logo img {
+  width: 100%;
+  height: auto;
+  transition: 0.2s ease-in-out;
+}
+
+.inner-logo img:hover {
+  transform: scale(1.05);
+}
+/* Menu */
+.inner-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.inner-menu a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+.inner-menu a:hover {
+  background: #007bff;
+  color: #fff;
+}
+/* END HEADER*/
+
+/* FOOTER */
+.footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+/* END FOOTER */
+
+/* PRODUCTS */
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.box-head .inner-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0.3s ease-in-out;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.product-item a{
+  text-decoration: none; 
+  color: #333; 
+  font-weight: bold; 
+}
+
+.inner-image {
+  text-align: center;
+  padding: 15px;
+  background: #f8f8f8;
+}
+
+.product-item .inner-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-item:hover .inner-image img {
+  transform: scale(1.05);
+}
+
+.inner-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.inner-content h3 {
+  font-size: 23px;
+}
+
+.inner-price-new {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e63946;
+}
+
+.inner-price-old {
+  font-size: 16px;
+  color: #888;
+  text-decoration: line-through;
+}
+
+.inner-discount {
+  font-size: 14px;
+  color: #fff;
+  background: #e63946;
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+/* END PRODUCTS */
+
+
+
