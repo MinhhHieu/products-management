@@ -13,7 +13,7 @@ module.exports.index = async (req, res) => {
   // Bo loc SP
   const filterStatus = filterStatusHelper(req.query);
 
-  // Object lay all SP
+  // Object lay data
   let find = {
     deleted: false,
   };
@@ -27,7 +27,7 @@ module.exports.index = async (req, res) => {
     find.title = objectSearch.regex;
   }
 
-  // Phân Trang
+  // Pagination
   const countProducts = await Product.countDocuments(find);
 
   let objectPagination = paginationHelper(
@@ -38,12 +38,22 @@ module.exports.index = async (req, res) => {
     req.query,
     countProducts
   );
-  // End Phân Trang
+  // End Pagination
+
+  //Sort
+  let sort = {};
+
+  if(req.query.sortKey && req.query.sortValue){
+    sort[req.query.sortKey] = req.query.sortValue;
+  } else{
+    sort.position = "desc";
+  }
+  //End Sort
 
   const products = await Product.find(find)
     .limit(objectPagination.limitItems)
     .skip(objectPagination.skip)
-    .sort({ position: "desc" });
+    .sort(sort);
 
   res.render("admin/pages/products/index.pug", {
     pageTitle: "Danh sách sản phẩm",
@@ -225,3 +235,4 @@ module.exports.detail = async (req, res) => {
     res.redirect(`${systemConfig.prefixAdmin}/products`);
   }
 };
+
